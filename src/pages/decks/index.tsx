@@ -2,7 +2,7 @@ import Layout from "../../components/Layout";
 import Link from "../../components/Link";
 import { getAllDecks } from "../../lib/decks";
 
-import Image from "next/image";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "../../components/Card";
 
@@ -21,11 +21,15 @@ export default function Home({ decks }) {
       <Typography variant="h4" component="h1" gutterBottom>
         Decks
       </Typography>
-      {decks.map(({ id, content }) => (
-        <Link href={`decks/${id}`} key={id}>
-          <Card card={content.entries.commanders[0]} />
-        </Link>
-      ))}
+      <Box>
+        {decks.map(({ id, content }) => (
+          <Box component="span" m={2} key={id}>
+            <Link href={`decks/${id}`}>
+              <Card card={content.entries.commanders[0]} />
+            </Link>
+          </Box>
+        ))}
+      </Box>
     </Layout>
   );
 }
