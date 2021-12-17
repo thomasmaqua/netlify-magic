@@ -1,3 +1,4 @@
+import Layout from "../../components/Layout";
 import { getAllDecks } from "../../lib/decks";
 
 export async function getStaticProps() {
@@ -10,5 +11,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ decks }) {
-  return <pre>{JSON.stringify(decks, undefined, 2)}</pre>;
+  return (
+    <Layout>
+      <pre>{JSON.stringify(decks, undefined, 2)}</pre>
+    </Layout>
+  );
 }
