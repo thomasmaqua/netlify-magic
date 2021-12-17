@@ -8,12 +8,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Typography variant="h4" component="h1" gutterBottom>
-        MUI v5 + Next.js with TypeScript example
-      </Typography>
-      <Typography paragraph>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
+        Next.js + Netlify + Scryfall demo project
       </Typography>
       <Typography paragraph>
         <Link href="/decks" color="secondary">

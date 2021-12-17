@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         minHeight: "100vh",
       }}
     >
-      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="xl">
         {children}
       </Container>
       <Footer />
