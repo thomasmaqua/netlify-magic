@@ -4,6 +4,7 @@ import { getAllDecks } from "../../lib/decks";
 
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
+import Card from "../../components/Card";
 
 export async function getStaticProps() {
   const decks = getAllDecks();
@@ -22,12 +23,7 @@ export default function Home({ decks }) {
       </Typography>
       {decks.map(({ id, content }) => (
         <Link href={`decks/${id}`} key={id}>
-          <Image
-            src={content.entries.commanders[0].card_digest.image_uris.front}
-            alt={content.entries.commanders[0].card_digest.name}
-            width={245}
-            height={341}
-          />
+          <Card card={content.entries.commanders[0]} />
         </Link>
       ))}
     </Layout>

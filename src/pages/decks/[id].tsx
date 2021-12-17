@@ -1,9 +1,9 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Image from "next/image";
 
 import Layout from "../../components/Layout";
 import { getAllDeckIds, getDeckData } from "../../lib/decks";
+import Card from "../../components/Card";
 
 export default function Deck({ deck }) {
   return (
@@ -16,12 +16,7 @@ export default function Deck({ deck }) {
           .filter((card) => card.card_digest)
           .map((card) => (
             <Box component="span" m={2} key={card.card_digest.id}>
-              <Image
-                src={card.card_digest.image_uris.front}
-                alt={card.card_digest.name}
-                width={245}
-                height={341}
-              />
+              <Card card={card} />
             </Box>
           ))}
       </Box>
@@ -33,12 +28,7 @@ export default function Deck({ deck }) {
           .filter((card) => card.card_digest)
           .map((card) => (
             <Box component="span" m={2} key={card.card_digest.id}>
-              <Image
-                src={card.card_digest.image_uris.front}
-                alt={card.card_digest.name}
-                width={245}
-                height={341}
-              />
+              <Card card={card} />
             </Box>
           ))}
       </Box>
@@ -50,12 +40,7 @@ export default function Deck({ deck }) {
           .filter((card) => card.card_digest)
           .map((card) => (
             <Box component="span" m={2} key={card.card_digest.id}>
-              <Image
-                src={card.card_digest.image_uris.front}
-                alt={card.card_digest.name}
-                width={245}
-                height={341}
-              />
+              <Card card={card} />
             </Box>
           ))}
       </Box>
